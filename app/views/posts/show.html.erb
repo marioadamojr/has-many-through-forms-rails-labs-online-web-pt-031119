@@ -9,7 +9,7 @@
 <p>
   <%= f.collection_select :user_id, User.all, :id, :username %>
 </p>
-  <%= f.fields_for :users, User.new do |user_fields| %>
+  <%= f.fields_for :user, User.new do |user_fields| %>
     <%= user_fields.label :username %>
     <%= user_fields.text_field :username %>
     <%= user_fields.label :email %>
@@ -30,9 +30,8 @@
   <% end %>
 </ul>
 
+
 <h4>Comments:</h4>
 <ul>
-  <% @post.comments.each do |cmt| %>
-    <li><%= cmt.user.username %></li>
-  <% end %>
+
 </ul>
