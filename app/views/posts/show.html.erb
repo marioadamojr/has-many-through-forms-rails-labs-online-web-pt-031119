@@ -17,6 +17,7 @@
 <ul>
   <% @post.comments.each do |cmt| %>
     <li>
+      <% binding.pry %>
       <%= cmt.user.username %> says: <%= cmt.content %>
     </li>
   <% end %>
