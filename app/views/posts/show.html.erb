@@ -4,15 +4,6 @@
   <%= @post.content %>
 </p>
 
-<h4>Users:</h4>
-<ul>
-  <% @post.users.uniq.each do |user| %>
-    <li>
-      <%= link_to user.username, user_path(user) %>
-    </li>
-  <% end %>
-</ul>
-
 <h4>Comments:</h4>
 <ul>
   <% @post.comments.each do |cmt| %>
@@ -20,6 +11,15 @@
       <% binding.pry %>
       <%= cmt.user.username %> says: <%= cmt.content %>
     </li>
+  <% end %>
+</ul>
+
+<h4>Users:</h4>
+<ul>
+  <% @post.users.uniq.each do |user| %>
+  <li>
+    <%= link_to user.username, user_path(user) %>
+  </li>
   <% end %>
 </ul>
 
