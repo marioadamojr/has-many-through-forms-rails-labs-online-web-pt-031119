@@ -6,14 +6,12 @@
 
 <h4>Comments:</h4>
 <ul>
-  <% @post.comments.each do |cmt| %>
+  <% @post.comments.each do |comment| %>
     <li>
-      <% binding.pry %>
-      <%= cmt.user.username %> says: <%= cmt.content %>
+      <%= comment.user.username %> says: <%= comment.content %>
     </li>
   <% end %>
-</ul>
-
+  </ul>
 <h4>Users:</h4>
 <ul>
   <% @post.users.uniq.each do |user| %>
